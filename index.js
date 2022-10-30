@@ -1,28 +1,19 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 
+const adminRoute = require("./routes/admin");
+const shopRoute = require("./routes/shop");
+
 const app = express();
 const port = 5000;
 
 app.use(bodyParser.urlencoded({ extended: false }));
 
-app.use("/add-products", (req, res, next) => {
-  console.log("in form middleware");
-  res.send(
-    "<form action='/product' method='post'><input type='text' name='title'><button type='submit'>Add-Product</button></input></form>"
-  );
-  next();
-});
+app.use("/admin", adminRoute);
+app.use(shopRoute);
 
-app.post("/product", (req, res, next) => {
-  console.log(req.body);
-  res.redirect("/");
-});
-
-app.use("/", (req, res, next) => {
-  console.log("in home middleware");
-  res.send("<h1>Hello from expressJs</h1>");
-  next();
+app.use((req, res, next) => {
+  res.status(404).send("<h1>Page Not Found🤔</h1>");
 });
 
 app.listen(port, () => {
