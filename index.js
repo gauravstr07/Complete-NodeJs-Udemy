@@ -1,10 +1,10 @@
 const express = require("express");
-const bodyParser = require('body-parser')
+const bodyParser = require("body-parser");
 
 const app = express();
 const port = 5000;
 
-app.use(bodyParser.urlencoded({extended: false}))
+app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use("/add-products", (req, res, next) => {
   console.log("in form middleware");
@@ -14,19 +14,14 @@ app.use("/add-products", (req, res, next) => {
   next();
 });
 
-app.use("/product", (req, res, next) => {
+app.post("/product", (req, res, next) => {
   console.log(req.body);
   res.redirect("/");
 });
 
 app.use("/", (req, res, next) => {
-  console.log("in anothor middleware");
+  console.log("in home middleware");
   res.send("<h1>Hello from expressJs</h1>");
-  next();
-});
-
-app.use("/", (req, res, next) => {
-  console.log(`in another middleware`);
   next();
 });
 
