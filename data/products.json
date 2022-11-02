@@ -1,9 +1,1 @@
-[
-  {
-    "title": "Lamborghini",
-    "imageUrl": "https://www.lamborghini.com/sites/it-en/files/DAM/lamborghini/facelift_2019/model_gw/huracan/gallery/gate_hura_03.jpg",
-    "description": "90.0000000",
-    "price": "this is my fav car 🤩",
-    "id": "0.5774799523211749"
-  }
-]
+[{"title":"Hello","imageUrl":"https://www.lamborghini.com/sites/it-en/files/DAM/lamborghini/facelift_2019/model_gw/huracan/gallery/gate_hura_03.jpg","description":"Lambo","price":"12.90","id":"0.29639248224393855"}]
